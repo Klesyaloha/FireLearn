@@ -19,7 +19,7 @@ struct ContentView: View {
         case false:
             Text("Noti not active").onAppear {
                 Task {
-                    await manager.requestPermission()
+                    await manager.getAuthStatus()
                 }
             }
         }
