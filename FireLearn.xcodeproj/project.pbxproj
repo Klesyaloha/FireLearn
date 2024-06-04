@@ -15,6 +15,7 @@
 		7649151B2C0DED1F006BE77F /* FireLearnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649151A2C0DED1F006BE77F /* FireLearnTests.swift */; };
 		764915252C0DED1F006BE77F /* FireLearnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915242C0DED1F006BE77F /* FireLearnUITests.swift */; };
 		764915272C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */; };
+		769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769818B92C0F085D00912FC2 /* LevelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		764915202C0DED1F006BE77F /* FireLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		764915242C0DED1F006BE77F /* FireLearnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITests.swift; sourceTree = "<group>"; };
 		764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		769818B92C0F085D00912FC2 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
 				764915092C0DED1E006BE77F /* ContentView.swift */,
+				769818B92C0F085D00912FC2 /* LevelView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
+				769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
 			);
