@@ -9,42 +9,85 @@ import SwiftUI
 
 struct LevelView: View {
     
-    var level : Double = 50
-    var levelName : String = "Jeune Dragon"
+    @State var level : Double = 50
+    @State var levelName : String = "Jeune Dragon"
+    
+    func levelChange() {
+        switch level {
+            case 0...20:
+                levelName = "Jeune Dragon"
+            case 20...50:
+                levelName = "Dragon Apprenti"
+            case 50...70:
+                levelName = "Guerrier Dragon"
+            case 70...100:
+                levelName = "Dragon Légendaire"
+        default:
+            levelName = "Default"
+        }
+    }
+    
     var body: some View {
-        ZStack {
-            LinearGradient(colors: [Color("firered"),Color("fireorange")], startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            VStack {
-                HStack {
-                    ProgressView(value: level, total: 100)
-                                .scaleEffect(y : 10)
-                                .frame(width: 300, height: 100)
-                                .accentColor(.black)
-                    Text("\(Int(level))%")
-                        .bold()
-                }
-                .padding(.bottom, -10.0)
-                Text(levelName)
+        NavigationView {
+            ZStack {
+                LinearGradient(colors: [Color("firered"),Color("fireorange")], startPoint: .top, endPoint: .bottom)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                VStack {
+                    HStack {
+                        ProgressView(value: level, total: 100)
+                                    .scaleEffect(y : 10)
+                                    
+                                    .accentColor(.black)
+                                    
+                        Text("\(Int(level))%")
+                            .frame(width: 50, height: 0)
+                            .bold()
+                    }
+                    .frame(width: 300, height: 100)
+                    .padding(.bottom, -22.0)
                     
-                Image("dragontestpng")
-            
-                HStack {
-                    Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image("gamebutton")
-                    })
-                    Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image("lunchbutton")
-                    })
-                    Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image("costumebutton")
-                    })
-                    Spacer()
+                        
+                    Text(levelName)
+                        .onChange(of: level) { levelChange() }
+                        .bold()
+                    
+                        Stepper(value: $level, in: 0...100, step: 10) { Text("")}
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .labelsHidden()
+                    
+
+
+                    
+                    Image("dragontestpng")
+                
+                    HStack {
+                        Spacer()
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image("jeuxbutton")
+                        })
+                        Spacer()
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image("miambutton")
+                        })
+                        Spacer()
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image("skinbutton")
+                        })
+                        Spacer()
+                    }
                 }
             }
+            .navigationTitle("Niveau")
+            .navigationBarItems(trailing:
+                NavigationLink(destination: Text("Paramètres")) {
+                    Image(systemName: "gearshape.2.fill")
+                        .accentColor(.black)
+            })
+            .navigationBarItems(trailing:
+                NavigationLink(destination:
+                    Text("Courses View")) {
+                    Image("coursbutton")
+            })
         }
     }
 }
