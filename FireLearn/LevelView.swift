@@ -35,9 +35,8 @@ struct LevelView: View {
                 VStack {
                     HStack {
                         ProgressView(value: level, total: 100)
-                                    .scaleEffect(y : 10)
-                                    
-                                    .accentColor(.black)
+                            .scaleEffect(y : 10)
+                            .accentColor(.black)
                                     
                         Text("\(Int(level))%")
                             .frame(width: 50, height: 0)
@@ -52,7 +51,6 @@ struct LevelView: View {
                         .bold()
                     
                         Stepper(value: $level, in: 0...100, step: 10) { Text("")}
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .labelsHidden()
                     
 
