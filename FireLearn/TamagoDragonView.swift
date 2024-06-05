@@ -10,7 +10,7 @@ import SwiftUI
 struct TamagoDragonView: View {
     var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
     var height: CGFloat = 60
-    var percent: CGFloat = 99
+    var percent: CGFloat = 30
     var color1 = Color.yellow
     var color2 = Color.red
     var dragonLevelName = ["Bébé Dragon", "Mini Dragon", "Jeune Dragon", "Maître Dragon"]
