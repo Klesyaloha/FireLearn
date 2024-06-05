@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "dragontest2png.png",
+      "filename" : "Capture d’écran 2024-06-04 à 19.09.53 3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Capture d’écran 2024-06-04 à 19.09.53 4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Capture d’écran 2024-06-04 à 19.09.53.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
