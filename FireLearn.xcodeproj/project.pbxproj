@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */; };
 		764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915072C0DED1E006BE77F /* FireLearnApp.swift */; };
 		7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915092C0DED1E006BE77F /* ContentView.swift */; };
 		7649150C2C0DED1E006BE77F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649150B2C0DED1E006BE77F /* Item.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagoDragonView.swift; sourceTree = "<group>"; };
 		764915042C0DED1E006BE77F /* FireLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764915072C0DED1E006BE77F /* FireLearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnApp.swift; sourceTree = "<group>"; };
 		764915092C0DED1E006BE77F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				764915092C0DED1E006BE77F /* ContentView.swift */,
 				769818B92C0F085D00912FC2 /* LevelView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
+				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
@@ -265,6 +268,7 @@
 			files = (
 				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
 				769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */,
+				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
 			);
