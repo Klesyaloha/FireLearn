@@ -21,7 +21,7 @@ struct TamagoDragonView: View {
     @State private var level: String = ""
     @State private var backgroundImageName: String = ""
     @State private var levelName: String = ""
-    //fonction pour mettre à jour les variables selon les pourcentages de progressionc
+    //fonction pour mettre à jour les variables selon les pourcentages de progression
     func updatedDragonInfo() {
         switch percent{
         case 0...25:
@@ -75,7 +75,7 @@ struct TamagoDragonView: View {
                         Spacer()
                         
                         NavigationLink(destination: Text("Cours")) {
-                            Image("settings")
+                            Image("grimoire")
                                 .resizable()
                                 .frame(width: 35, height: 35)
                                 .cornerRadius(25)
