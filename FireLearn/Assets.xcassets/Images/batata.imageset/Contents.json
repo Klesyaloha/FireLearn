@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "miniDragon.png",
+      "filename" : "batata.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "miniDragon 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "miniDragon 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

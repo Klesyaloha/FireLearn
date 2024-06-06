@@ -75,7 +75,7 @@ struct TamagoDragonView: View {
                         Spacer()
                         
                         NavigationLink(destination: Text("Cours")) {
-                            Image("settings")
+                            Image("grimoire")
                                 .resizable()
                                 .frame(width: 35, height: 35)
                                 .cornerRadius(25)
@@ -128,7 +128,8 @@ struct TamagoDragonView: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 .padding()
                         }
-                        NavigationLink(destination: Text("Manger")){
+                        NavigationLink(destination:
+                            EatView()){
                             Image("icon_eat")
                                 .resizable()
                                 .frame(width: 75, height: 75)

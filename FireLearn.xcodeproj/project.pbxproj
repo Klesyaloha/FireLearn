@@ -17,6 +17,7 @@
 		764915252C0DED1F006BE77F /* FireLearnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915242C0DED1F006BE77F /* FireLearnUITests.swift */; };
 		764915272C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */; };
 		769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769818B92C0F085D00912FC2 /* LevelView.swift */; };
+		F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0BED02C11BC29000B1FF2 /* EatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		764915242C0DED1F006BE77F /* FireLearnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITests.swift; sourceTree = "<group>"; };
 		764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		769818B92C0F085D00912FC2 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		F3B0BED02C11BC29000B1FF2 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				769818B92C0F085D00912FC2 /* LevelView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
 				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
+				F3B0BED02C11BC29000B1FF2 /* EatView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
@@ -271,6 +274,7 @@
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
+				F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
