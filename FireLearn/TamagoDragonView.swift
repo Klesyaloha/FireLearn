@@ -10,7 +10,7 @@ import SwiftUI
 struct TamagoDragonView: View {
     var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
     var height: CGFloat = 60
-    var percent: CGFloat = 89
+    var percent: CGFloat = 95
     var color1 = Color.yellow
     var color2 = Color.red
     var color3 = Color.white
@@ -49,7 +49,7 @@ struct TamagoDragonView: View {
     
     var body: some View {
             let multiplier = width / 100
-            
+        NavigationView{
             ZStack {
                 Image(backgroundImageName)
                     .resizable()
@@ -58,9 +58,7 @@ struct TamagoDragonView: View {
                 
                 VStack {
                     HStack{
-                        Button(action: {
-                            // Action pour le bouton des settings
-                        }) {
+                        NavigationLink(destination: Text("Paramètres")) {
                             Image("settings")
                                 .resizable()
                                 .frame(width: 35, height: 35)
@@ -76,10 +74,8 @@ struct TamagoDragonView: View {
                         
                         Spacer()
                         
-                        Button(action: {
-                                // Action pour le bouton des cours
-                        }) {
-                            Image("grimoire")
+                        NavigationLink(destination: Text("Cours")) {
+                            Image("settings")
                                 .resizable()
                                 .frame(width: 35, height: 35)
                                 .cornerRadius(25)
@@ -124,9 +120,7 @@ struct TamagoDragonView: View {
                     Spacer()
                     
                     HStack {
-                        Button(action: {
-                            // Action pour le bouton play
-                        }) {
+                        NavigationLink(destination: Text("Jouer")) {
                             Image("icon_play")
                                 .resizable()
                                 .frame(width: 75, height: 75)
@@ -134,9 +128,7 @@ struct TamagoDragonView: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 .padding()
                         }
-                        Button(action: {
-                            // Action pour le bouton manger
-                        }) {
+                        NavigationLink(destination: Text("Manger")){
                             Image("icon_eat")
                                 .resizable()
                                 .frame(width: 75, height: 75)
@@ -144,9 +136,7 @@ struct TamagoDragonView: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 .padding()
                         }
-                        Button(action: {
-                            // Action pour le bouton skins
-                        }) {
+                        NavigationLink(destination: Text("Skins")){
                             Image("icon_skins")
                                 .resizable()
                                 .frame(width: 75, height: 75)
@@ -163,6 +153,7 @@ struct TamagoDragonView: View {
                     updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                 }
             }
+        }
         }
     }
 
