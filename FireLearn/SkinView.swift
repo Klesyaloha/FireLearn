@@ -1,5 +1,5 @@
 //
-//  PlayView.swift
+//  SkinView.swift
 //  FireLearn
 //
 //  Created by Klesya Loha on 06/06/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayView: View {
+struct SkinView: View {
 var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
 var height: CGFloat = 60
 @Binding var progress: CGFloat
@@ -48,12 +48,12 @@ func updatedDragonInfo() {
     }
 }
     
-@State private var isPelucheVisible = false
-@State private var isCubesVisible = false
-@State private var isTowerVisible = false
-@State private var peluchePosition = CGPoint(x: 200, y: 670)
-@State private var cubesPosition = CGPoint(x: 200, y: 670)
-@State private var towerPosition = CGPoint(x: 200, y: 670)
+@State private var isGlassesVisible = false
+@State private var isChapeauVisible = false
+@State private var isNoeudVisible = false
+@State private var glassesPosition = CGPoint(x: 196, y: 416)
+@State private var chapeauPosition = CGPoint(x: 200, y: 670)
+@State private var noeudPosition = CGPoint(x: 200, y: 670)
 // Position de la bouche du dragon
     let mouthPosition = CGPoint(x: 215, y: 390)
     
@@ -61,12 +61,12 @@ func updatedDragonInfo() {
             let multiplier = width / 100
         NavigationView{
             ZStack {
-                Image("playFond")
+                Image("skinFond")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                    .opacity(0.9)
-                    .blur(radius: /*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .opacity(0.6)
+                    .blur(radius: 2.5)
                 
                 VStack {
                     HStack{
@@ -116,48 +116,68 @@ func updatedDragonInfo() {
                     
                     HStack {
                         Button(action: {
-                            if !isCubesVisible && !isTowerVisible {
-                                isPelucheVisible.toggle()
-                                peluchePosition = CGPoint(x: 200, y: 670)
+                                isGlassesVisible.toggle()
+                            
+                            if levelName == dragonLevelName[2] {
+                                glassesPosition = CGPoint(x: 217, y: 376)
+                            } else if levelName == dragonLevelName[3] {
+                                glassesPosition = CGPoint(x: 198, y: 395)
+                            } else {
+                                glassesPosition = CGPoint(x: 196, y: 416)
+                            }
+                            
+                                
+                            
+                        }, label: {
+                            Image("glasses")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.all, 11.0)
+                                .frame(width: 90.0, height: 90.0)
+                                .background(Color(hue: 0.986, saturation: 0.282, brightness: 0.963))
+                                .cornerRadius(45)
+                        })
+                        
+                        Button(action: {
+                                isChapeauVisible.toggle()
+                            if levelName == dragonLevelName[2] {
+                                chapeauPosition = CGPoint(x: 207, y: 270)
+                            } else if levelName == dragonLevelName[3] {
+                                chapeauPosition = CGPoint(x: 199, y: 291)
+                            } else {
+                                chapeauPosition = CGPoint(x: 203, y: 282)
                             }
                             
                         }, label: {
-                            Image("peluche")
+                            Image("chapeau")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.all, 13.0)
-                                .frame(width: 90.0, height: 90.0)
-                                .background(Color(hue: 0.08, saturation: 0.293, brightness: 0.894))
+                                .padding(.all, 16.0)
+                                .frame(width: 90, height: 90)
+                                .background(Color(hue: 0.029, saturation: 0.039, brightness: 0.438))
                                 .cornerRadius(45)
                         })
                         
                         Button(action: {
-                            if !isPelucheVisible && !isTowerVisible {
-                                isCubesVisible.toggle()
-                                cubesPosition = CGPoint(x: 200, y: 670)
+                                isNoeudVisible.toggle()
+                            if levelName == dragonLevelName[1] {
+                                noeudPosition = CGPoint(x: 194, y: 505)
+                            } else if levelName == dragonLevelName[0] {
+                                noeudPosition = CGPoint(x: 194, y: 484)
+                            } else if levelName == dragonLevelName[3] {
+                                noeudPosition = CGPoint(x: 197, y: 512)
+                            } else {
+                                noeudPosition = CGPoint(x: 213, y: 472)
                             }
+                            
+                                
                         }, label: {
-                            Image("cubes")
+                            Image("noeud")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.all, 13.0)
+                                .padding(.all, 19.0)
                                 .frame(width: 90, height: 90)
-                                .background(Color(hue: 0.446, saturation: 0.073, brightness: 0.839))
-                                .cornerRadius(45)
-                        })
-                        
-                        Button(action: {
-                            if !isPelucheVisible && !isCubesVisible {
-                                isTowerVisible.toggle()
-                                towerPosition = CGPoint(x: 200, y: 670)
-                            }
-                        }, label: {
-                            Image("tower")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.all, 15.0)
-                                .frame(width: 90, height: 90)
-                                .background(Color(hue: 0.745, saturation: 0.087, brightness: 0.929))
+                                .background(Color(hue: 0.997, saturation: 0.429, brightness: 0.927))
                                 .cornerRadius(45)
                         })
                     }
@@ -168,16 +188,16 @@ func updatedDragonInfo() {
                         updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                     }
                 
-                if isCubesVisible {
-                    Image("cubes")
+                if isChapeauVisible {
+                    Image("chapeau")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .position(cubesPosition)
+                        .frame(width: 200.0, height: 200.0)
+                        .position(chapeauPosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    cubesPosition = value.location
+                                    chapeauPosition = value.location
                                 }
                                 .onEnded { _ in
                                     
@@ -185,16 +205,16 @@ func updatedDragonInfo() {
                         )
                 }
                 
-                if isPelucheVisible {
-                    Image("peluche")
+                if isGlassesVisible {
+                    Image("glasses")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 150.0, height: 150.0)
-                        .position(peluchePosition)
+                        .frame(width: 230.0, height: 230.0)
+                        .position(glassesPosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    peluchePosition = value.location
+                                    glassesPosition = value.location
                                 }
                                 .onEnded { _ in
                                     
@@ -202,19 +222,19 @@ func updatedDragonInfo() {
                         )
                 }
                 
-                if isTowerVisible {
-                    Image("tower")
+                if isNoeudVisible {
+                    Image("noeud")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .position(towerPosition)
+                        .frame(width: 120.0, height: 120.0)
+                        .position(noeudPosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    towerPosition = value.location
+                                    noeudPosition = value.location
                                 }
                                 .onEnded { _ in
-                                    
+                                    print(noeudPosition)
                                 }
                         )
                 }
@@ -223,10 +243,10 @@ func updatedDragonInfo() {
     }
 }
 
-struct PlayView_Previews: PreviewProvider {
+struct SkinView_Previews: PreviewProvider {
     @State static var progressPreview: CGFloat = 50.0
 
     static var previews: some View {
-        PlayView(progress: $progressPreview)
+        SkinView(progress: $progressPreview)
     }
 }

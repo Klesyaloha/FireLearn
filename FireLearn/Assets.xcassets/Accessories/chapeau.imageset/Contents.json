@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "piggy.png",
+      "filename" : "chapeau.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "chapeau 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "chapeau 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

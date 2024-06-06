@@ -10,7 +10,7 @@ import SwiftUI
 struct EatView: View {
 var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
 var height: CGFloat = 60
-@State var percent: CGFloat = 60
+@Binding var progress: CGFloat
 var color1 = Color.yellow
 var color2 = Color.red
 var color3 = Color.white
@@ -24,7 +24,7 @@ var dragonLevelName = ["Bébé Dragon", "Mini Dragon", "Jeune Dragon", "Maître 
     
 //fonction pour mettre à jour les variables selon les pourcentages de progression
 func updatedDragonInfo() {
-    switch percent{
+    switch progress{
     case 0...25:
         level = ("NIVEAU O")
         dragonId = ("bebeDragon")
@@ -88,7 +88,7 @@ func updatedDragonInfo() {
                             .padding(.leading, 25)
                         
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .frame(width: multiplier * percent, height: height)
+                            .frame(width: multiplier * progress, height: height)
                             .background(
                                 LinearGradient(colors: [color1, color2], startPoint: .leading, endPoint: .trailing)
                                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -98,7 +98,7 @@ func updatedDragonInfo() {
                         
                         HStack {
                             Spacer()
-                            Text("\(Int(percent)) %")
+                            Text("\(Int(progress)) %")
                                 .bold()
                                 .padding(.trailing, 15)
                         }
@@ -116,54 +116,72 @@ func updatedDragonInfo() {
                     
                     Spacer()
                     
-                    HStack {
-                        Button(action: {
-                            if !isPiggyVisible && !isBatataVisible {
-                                isChickenVisible.toggle()
-                                chickenPosition = CGPoint(x: 200, y: 670)
-                            }
+                    ZStack{
+                        HStack {
+                            Button(action: {
+                                if !isPiggyVisible && !isBatataVisible && numberOfChicken > 0 {
+                                    isChickenVisible.toggle()
+                                    chickenPosition = CGPoint(x: 200, y: 670)
+                                }
+                                
+                            }, label: {
+                                Image("chicken")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.all, 10.0)
+                                    .background(Color(red: 0.849, green: 0.663, blue: 0.485))
+                                    .frame(width: 90.0, height: 90.0)
+                                    .cornerRadius(45)
+                            })
                             
-                        }, label: {
-                            Image("chicken")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
-                                .background(Color(red: 0.849, green: 0.663, blue: 0.485))
-                                .frame(width: 90.0, height: 90.0)
-                                .cornerRadius(45)
-                        })
+                            Button(action: {
+                                if !isChickenVisible && !isBatataVisible && numberOfPiggy > 0 {
+                                    isPiggyVisible.toggle()
+                                    piggyPosition = CGPoint(x: 200, y: 670)
+                                }
+                            }, label: {
+                                Image("piggy")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.all, 10.0)
+                                    .frame(width: 90, height: 90)
+                                    .background(Color(red: 0.991, green: 0.829, blue: 0.741))
+                                    .cornerRadius(45)
+                            })
+                            
+                            Button(action: {
+                                if !isChickenVisible && !isPiggyVisible && numberOfBatata > 1 {
+                                    isBatataVisible.toggle()
+                                    batataPosition = CGPoint(x: 200, y: 670)
+                                }
+                            }, label: {
+                                Image("batata")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.all, 10.0)
+                                    .frame(width: 90, height: 90)
+                                    .background(Color(red: 0.963, green: 0.777, blue: 0.554))
+                                    .cornerRadius(45)
+                            })
+                        }
+                        .padding(.bottom, 70.0)
                         
-                        Button(action: {
-                            if !isChickenVisible && !isBatataVisible {
-                                isPiggyVisible.toggle()
-                                piggyPosition = CGPoint(x: 200, y: 670)
-                            }
-                        }, label: {
-                            Image("piggy")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
-                                .frame(width: 90, height: 90)
-                                .background(Color(red: 0.991, green: 0.829, blue: 0.741))
-                                .cornerRadius(45)
-                        })
+                        Image(systemName: "\(numberOfChicken).square.fill")
+                            .padding(.trailing, 130.0)
+                            .padding(.bottom, 115.0)
+                            .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
                         
-                        Button(action: {
-                            if !isChickenVisible && !isPiggyVisible {
-                                isBatataVisible.toggle()
-                                batataPosition = CGPoint(x: 200, y: 670)
-                            }
-                        }, label: {
-                            Image("batata")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
-                                .frame(width: 90, height: 90)
-                                .background(Color(red: 0.963, green: 0.777, blue: 0.554))
-                                .cornerRadius(45)
-                        })
+                        Image(systemName: "\(numberOfPiggy).square.fill")
+                            .padding(.leading, 66.0)
+                            .padding(.bottom, 115.0)
+                            .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
+                        
+                        Image(systemName: "\(numberOfBatata).square.fill")
+                            .padding(.leading, 262.0)
+                            .padding(.bottom, 115.0)
+                            .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
+                        
                     }
-                    .padding(.bottom, 70.0)
                 }
                     .edgesIgnoringSafeArea(.bottom)
                     .onAppear {
@@ -228,8 +246,10 @@ func updatedDragonInfo() {
         let dy = mouthPosition.y - chickenPosition.y
         
         if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
+            if progress < 100 {
+                progress += 4
+                numberOfChicken -= 1
+                updatedDragonInfo()
             }
             
             isChickenVisible = false
@@ -241,8 +261,10 @@ func updatedDragonInfo() {
         let dy = mouthPosition.y - chickenPosition.y
         
         if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
+            if progress < 100 {
+                progress += 4
+                numberOfPiggy -= 1
+                updatedDragonInfo()
             }
             
             isPiggyVisible = false
@@ -254,8 +276,10 @@ func updatedDragonInfo() {
         let dy = mouthPosition.y - batataPosition.y
         
         if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
+            if progress < 100 {
+                progress += 4
+                numberOfBatata -= 1
+                updatedDragonInfo()
             }
             
             isBatataVisible = false
@@ -264,6 +288,10 @@ func updatedDragonInfo() {
 }
 
 
-#Preview {
-    EatView()
+struct EatView_Previews: PreviewProvider {
+    @State static var progressPreview: CGFloat = 50.0
+
+    static var previews: some View {
+        EatView(progress: $progressPreview)
+    }
 }

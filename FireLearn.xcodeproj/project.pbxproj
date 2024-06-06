@@ -18,6 +18,7 @@
 		764915272C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */; };
 		769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769818B92C0F085D00912FC2 /* LevelView.swift */; };
 		F38A5B782C11FE330057480D /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B772C11FE330057480D /* PlayView.swift */; };
+		F38A5B7A2C1215480057480D /* SkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B792C1215480057480D /* SkinView.swift */; };
 		F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0BED02C11BC29000B1FF2 /* EatView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		769818B92C0F085D00912FC2 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 		F38A5B772C11FE330057480D /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		F38A5B792C1215480057480D /* SkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinView.swift; sourceTree = "<group>"; };
 		F3B0BED02C11BC29000B1FF2 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				F38A5B772C11FE330057480D /* PlayView.swift */,
 				F3B0BED02C11BC29000B1FF2 /* EatView.swift */,
+				F38A5B792C1215480057480D /* SkinView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
+				F38A5B7A2C1215480057480D /* SkinView.swift in Sources */,
 				769818BA2C0F085D00912FC2 /* LevelView.swift in Sources */,
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
 				F38A5B782C11FE330057480D /* PlayView.swift in Sources */,

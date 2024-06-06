@@ -10,7 +10,7 @@ import SwiftUI
 struct TamagoDragonView: View {
     var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
     var height: CGFloat = 60
-    var percent: CGFloat = 95
+    @State private var progress: CGFloat = 50
     var color1 = Color.yellow
     var color2 = Color.red
     var color3 = Color.white
@@ -23,7 +23,7 @@ struct TamagoDragonView: View {
     @State private var levelName: String = ""
     //fonction pour mettre à jour les variables selon les pourcentages de progression
     func updatedDragonInfo() {
-        switch percent{
+        switch progress{
         case 0...25:
             level = ("NIVEAU O")
             dragonId = ("bebeDragon")
@@ -91,7 +91,7 @@ struct TamagoDragonView: View {
                             .padding(.leading, 25)
                         
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .frame(width: multiplier * percent, height: height)
+                            .frame(width: multiplier * progress, height: height)
                             .background(
                                 LinearGradient(colors: [color1, color2], startPoint: .leading, endPoint: .trailing)
                                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -101,7 +101,7 @@ struct TamagoDragonView: View {
                         
                         HStack {
                             Spacer()
-                            Text("\(Int(percent)) %")
+                            Text("\(Int(progress)) %")
                                 .bold()
                                 .padding(.trailing, 15)
                         }
@@ -120,7 +120,7 @@ struct TamagoDragonView: View {
                     Spacer()
                     
                     HStack {
-                        NavigationLink(destination: Text("Jouer")) {
+                        NavigationLink(destination: PlayView(progress: $progress)) {
                             Image("icon_play")
                                 .resizable()
                                 .frame(width: 75, height: 75)
@@ -128,8 +128,7 @@ struct TamagoDragonView: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 .padding()
                         }
-                        NavigationLink(destination:
-                            EatView()){
+                        NavigationLink(destination: EatView(progress: $progress)){
                             Image("icon_eat")
                                 .resizable()
                                 .frame(width: 75, height: 75)
@@ -137,7 +136,7 @@ struct TamagoDragonView: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 .padding()
                         }
-                        NavigationLink(destination: Text("Skins")){
+                        NavigationLink(destination: SkinView(progress: $progress)){
                             Image("icon_skins")
                                 .resizable()
                                 .frame(width: 75, height: 75)

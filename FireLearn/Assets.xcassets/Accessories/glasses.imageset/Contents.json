@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chicken.png",
+      "filename" : "glasses.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "glasses 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "glasses 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
