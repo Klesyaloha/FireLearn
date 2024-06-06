@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "dragonbutton.png",
+      "filename" : "cubes.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "cubes 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "cubes 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

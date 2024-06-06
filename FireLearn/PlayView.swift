@@ -1,5 +1,5 @@
 //
-//  EatView.swift
+//  PlayView.swift
 //  FireLearn
 //
 //  Created by Klesya Loha on 06/06/2024.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct EatView: View {
+struct PlayView: View {
 var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
 var height: CGFloat = 60
-@State var percent: CGFloat = 60
+@State var percent: CGFloat = 50
 var color1 = Color.yellow
 var color2 = Color.red
 var color3 = Color.white
@@ -47,15 +47,13 @@ func updatedDragonInfo() {
         levelName = dragonLevelName[3]
     }
 }
-@State private var numberOfChicken = 2
-@State private var numberOfPiggy = 2
-@State private var numberOfBatata = 2
-@State private var isChickenVisible = false
-@State private var isPiggyVisible = false
-@State private var isBatataVisible = false
-@State private var chickenPosition = CGPoint(x: 200, y: 670)
-@State private var batataPosition = CGPoint(x: 200, y: 670)
-@State private var piggyPosition = CGPoint(x: 200, y: 670)
+    
+@State private var isPelucheVisible = false
+@State private var isCubesVisible = false
+@State private var isTowerVisible = false
+@State private var peluchePosition = CGPoint(x: 200, y: 670)
+@State private var cubesPosition = CGPoint(x: 200, y: 670)
+@State private var towerPosition = CGPoint(x: 200, y: 670)
 // Position de la bouche du dragon
     let mouthPosition = CGPoint(x: 215, y: 390)
     
@@ -63,7 +61,7 @@ func updatedDragonInfo() {
             let multiplier = width / 100
         NavigationView{
             ZStack {
-                Image("eatFond")
+                Image("playFond")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
@@ -118,48 +116,48 @@ func updatedDragonInfo() {
                     
                     HStack {
                         Button(action: {
-                            if !isPiggyVisible && !isBatataVisible {
-                                isChickenVisible.toggle()
-                                chickenPosition = CGPoint(x: 200, y: 670)
+                            if !isCubesVisible && !isTowerVisible {
+                                isPelucheVisible.toggle()
+                                peluchePosition = CGPoint(x: 200, y: 670)
                             }
                             
                         }, label: {
-                            Image("chicken")
+                            Image("peluche")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
-                                .background(Color(red: 0.849, green: 0.663, blue: 0.485))
+                                .padding(.all, 13.0)
+                                .background(Color(hue: 0.08, saturation: 0.293, brightness: 0.894))
                                 .frame(width: 90.0, height: 90.0)
                                 .cornerRadius(45)
                         })
                         
                         Button(action: {
-                            if !isChickenVisible && !isBatataVisible {
-                                isPiggyVisible.toggle()
-                                piggyPosition = CGPoint(x: 200, y: 670)
+                            if !isPelucheVisible && !isTowerVisible {
+                                isCubesVisible.toggle()
+                                cubesPosition = CGPoint(x: 200, y: 670)
                             }
                         }, label: {
-                            Image("piggy")
+                            Image("cubes")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
+                                .padding(.all, 13.0)
                                 .frame(width: 90, height: 90)
-                                .background(Color(red: 0.991, green: 0.829, blue: 0.741))
+                                .background(Color(hue: 0.446, saturation: 0.073, brightness: 0.839))
                                 .cornerRadius(45)
                         })
                         
                         Button(action: {
-                            if !isChickenVisible && !isPiggyVisible {
-                                isBatataVisible.toggle()
-                                batataPosition = CGPoint(x: 200, y: 670)
+                            if !isPelucheVisible && !isCubesVisible {
+                                isTowerVisible.toggle()
+                                towerPosition = CGPoint(x: 200, y: 670)
                             }
                         }, label: {
-                            Image("batata")
+                            Image("tower")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.all, 10.0)
+                                .padding(.all, 15.0)
                                 .frame(width: 90, height: 90)
-                                .background(Color(red: 0.963, green: 0.777, blue: 0.554))
+                                .background(Color(hue: 0.745, saturation: 0.087, brightness: 0.929))
                                 .cornerRadius(45)
                         })
                     }
@@ -170,100 +168,61 @@ func updatedDragonInfo() {
                         updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                     }
                 
-                if isBatataVisible {
-                    Image("batata")
+                if isCubesVisible {
+                    Image("cubes")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(batataPosition)
+                        .position(cubesPosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    batataPosition = value.location
+                                    cubesPosition = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionBatata()
+                                    
                                 }
                         )
                 }
                 
-                if isChickenVisible {
-                    Image("chicken")
+                if isPelucheVisible {
+                    Image("peluche")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .position(chickenPosition)
+                        .frame(width: 150.0, height: 150.0)
+                        .position(peluchePosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    chickenPosition = value.location
+                                    peluchePosition = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionChicken()
+                                    
                                 }
                         )
                 }
                 
-                if isPiggyVisible {
-                    Image("piggy")
+                if isTowerVisible {
+                    Image("tower")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(piggyPosition)
+                        .position(towerPosition)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    piggyPosition = value.location
+                                    towerPosition = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionPiggy()
+                                    
                                 }
                         )
                 }
             }
-        }
-    }
-    func checkCollisionChicken() {
-        let dx = mouthPosition.x - chickenPosition.x
-        let dy = mouthPosition.y - chickenPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
-            }
-            
-            isChickenVisible = false
-        }
-    }
-    
-    func checkCollisionPiggy() {
-        let dx = mouthPosition.x - piggyPosition.x
-        let dy = mouthPosition.y - chickenPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
-            }
-            
-            isPiggyVisible = false
-        }
-    }
-    
-    func checkCollisionBatata() {
-        let dx = mouthPosition.x - batataPosition.x
-        let dy = mouthPosition.y - batataPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if percent < 100 {
-                percent += 4
-            }
-            
-            isBatataVisible = false
         }
     }
 }
 
-
 #Preview {
-    EatView()
+    PlayView()
 }
