@@ -9,29 +9,24 @@ import SwiftUI
 
 struct LevelView: View {
     
+    @State private var isFoodVisible = false
+    @State private var chickenPosition = CGPoint(x: 50, y: 50)
     @State var level : Double = 50
-    @State var levelName : String = "Jeune Dragon"
     
-    func levelChange() {
-        switch level {
-            case 0...20:
-                levelName = "Jeune Dragon"
-            case 20...50:
-                levelName = "Dragon Apprenti"
-            case 50...70:
-                levelName = "Guerrier Dragon"
-            case 70...100:
-                levelName = "Dragon Légendaire"
-        default:
-            levelName = "Default"
-        }
-    }
+    // Position de la bouche du dragon
+        let mouthPosition = CGPoint(x: 213, y: 269.0)
+        
     
     var body: some View {
         NavigationView {
             ZStack {
                 LinearGradient(colors: [Color("firered"),Color("fireorange")], startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .edgesIgnoringSafeArea(.all)
+                
+                Text(distanceDescription())
+                    .padding()
+                    .position(CGPoint(x: 200, y: 10.0))
+                
                 VStack {
                     HStack {
                         ProgressView(value: level, total: 100)
@@ -45,48 +40,105 @@ struct LevelView: View {
                     .frame(width: 300, height: 100)
                     .padding(.bottom, -22.0)
                     
-                        
-                    Text(levelName)
-                        .onChange(of: level) { levelChange() }
-                        .bold()
+                    Spacer()
                     
-                        Stepper(value: $level, in: 0...100, step: 10) { Text("")}
-                            .labelsHidden()
+                    Image("jeuneDragon")
                     
-
-
-                    
-                    Image("dragontestpng")
-                
-                    HStack {
-                        Spacer()
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image("jeuxbutton")
-                        })
-                        Spacer()
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image("miambutton")
-                        })
-                        Spacer()
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image("skinbutton")
-                        })
-                        Spacer()
+                    Spacer()
+                    HStack{
+                        Button(action:{
+                            // Action pour le bouton play
+                        }){
+                            Image("icon_play")
+                                .resizable()
+                                .frame(width: 75, height: 75)
+                                .padding()
+                        }
+                        Button(action:{
+                            // Action pour le bouton manger
+                            self.isFoodVisible.toggle()
+                        }){
+                            Image("icon_eat")
+                                .resizable()
+                                .frame(width: 75, height: 75)
+                                .padding()
+                        }
+                        Button(action:{
+                            // Action pour le bouton skins
+                        }){
+                            Image("icon_skins")
+                                .resizable()
+                                .frame(width: 75, height: 75)
+                                .padding()
+                        }
                     }
+                    .frame(maxWidth: .infinity) //SUI couvre ecran mm zone de securité en bas
+                }
+                
+                Circle()
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .frame(width: 10, height: 10)
+                    .position(x: 213, y: 269.0)
+                
+                if isFoodVisible {
+                    Image("chicken")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
+                        .position(chickenPosition)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    chickenPosition = value.location
+                                }
+                                .onEnded { _ in
+                                    checkCollision()
+                                }
+                        )
                 }
             }
             .navigationTitle("Niveau")
             .navigationBarItems(trailing:
-                NavigationLink(destination: Text("Paramètres")) {
-                    Image(systemName: "gearshape.2.fill")
-                        .accentColor(.black)
+                                    NavigationLink(destination: Text("Paramètres")) {
+                Image(systemName: "gearshape.2.fill")
+                    .accentColor(.black)
             })
             .navigationBarItems(trailing:
-                NavigationLink(destination:
-                    Text("Courses View")) {
-                    Image("coursbutton")
+                                    NavigationLink(destination:
+                                                    Text("Courses View")) {
+                Image("coursbutton")
             })
         }
+    }
+    func checkCollision() {
+        let dx = mouthPosition.x - chickenPosition.x
+        let dy = mouthPosition.y - chickenPosition.y
+        
+        if abs(dx) <= 10 && abs(dy) <= 45 {
+            level += 10
+            isFoodVisible = false
+        }
+    }
+    
+    func distanceDescription() -> String {
+        let dx = mouthPosition.x - chickenPosition.x
+        let dy = mouthPosition.y - chickenPosition.y
+        
+        var description = ""
+        
+        if dx < 0 {
+            description += "Déplacer vers la gauche de \(abs(dx).rounded()) points\n"
+        } else {
+            description += "Déplacer vers la droite de \(dx.rounded()) points\n"
+        }
+        
+        if dy < 0 {
+            description += "Déplacer vers le haut de \(abs(dy).rounded()) points"
+        } else {
+            description += "Déplacer vers le bas de \(dy.rounded()) points"
+        }
+        
+        return description
     }
 }
 
