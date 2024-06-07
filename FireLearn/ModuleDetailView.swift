@@ -16,32 +16,76 @@ struct ModuleDetailView: View {
         NavigationStack {
             VStack {
                 Image(module.imageName)
-                 .resizable()
-                 .frame(width: 500 ,height: 340)
-                 .cornerRadius(10)
-                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                 
-                    
+                    .resizable()
+                    .frame(width: 500 ,height: 340)
+                    .cornerRadius(10)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                
+                
                 Text(module.title)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .padding(-60)
-                 
+                
                 List {
-                    Text("1) Variables, constants, strings, and numbers")
-                    Text("2) Booleans, string interpolation")
-                    Text("3) Arrays, dictionaries, sets, and enums")
-                    Text("4) Type annotations")
-                    Text("5) If, switch, and the ternary operator")
-                    Text("6) Loops")
-                    Text("7) Functions, parameters, and return values")
-                    Text("8) Default values, throwing functions")
-                    Text("9) Closures, passing functions into functions")
-                    Text("10) Structs, computed properties, and property observers")
-                    Text("11) Access control, static properties and methods")
-                    Text("12)Classes, inheritance")
-                    Text("13) Protocols, extensions")
-                    Text("14) Optionals, nil coalescing")
+                    HStack{
+                        Image(systemName: "checkmark.circle")
+                        Text("1) Variables, constants, strings, and numbers")
+                    }
+                    
+                    HStack{
+                        Image(systemName: "checkmark.circle")
+                        Text("2) Booleans, string interpolation")
+                    }
+                    
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("3) Arrays, dictionaries, sets, and enums")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("4) Type annotations")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("5) If, switch, and the ternary operator")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("6) Loops")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("7) Functions, parameters, and return values")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("8) Default values, throwing functions")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("9) Closures, passing functions into functions")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("10) Structs, computed properties, and property observers")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("11) Access control, static properties and methods")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("12)Classes, inheritance")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("13) Protocols, extensions")
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("14) Optionals, nil coalescing")
+                    }
                 }
                 .listStyle(PlainListStyle())
                 
