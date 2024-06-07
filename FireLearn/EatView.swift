@@ -150,7 +150,7 @@ func updatedDragonInfo() {
                             })
                             
                             Button(action: {
-                                if !isChickenVisible && !isPiggyVisible && numberOfBatata > 1 {
+                                if !isChickenVisible && !isPiggyVisible && numberOfBatata > 0 {
                                     isBatataVisible.toggle()
                                     batataPosition = CGPoint(x: 200, y: 670)
                                 }
