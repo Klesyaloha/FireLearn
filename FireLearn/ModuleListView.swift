@@ -38,6 +38,7 @@ struct ModuleListView: View {
                     }
                     
                 }
+                .listStyle(PlainListStyle())
              .navigationTitle("Cours")
              }
              

@@ -11,6 +11,7 @@
 		75126FEB2C1069F900ADC716 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75126FEA2C1069F900ADC716 /* Module.swift */; };
 		75E611282C10906800EECC4E /* ModuleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E611272C10906800EECC4E /* ModuleListView.swift */; };
 		75E6112A2C10983F00EECC4E /* ModuleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E611292C10983F00EECC4E /* ModuleDetailView.swift */; };
+		75E6112E2C12789000EECC4E /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6112D2C12789000EECC4E /* CourseModel.swift */; };
 		764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915072C0DED1E006BE77F /* FireLearnApp.swift */; };
 		7649150C2C0DED1E006BE77F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649150B2C0DED1E006BE77F /* Item.swift */; };
 		7649150E2C0DED1F006BE77F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7649150D2C0DED1F006BE77F /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		75126FEA2C1069F900ADC716 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		75E611272C10906800EECC4E /* ModuleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleListView.swift; sourceTree = "<group>"; };
 		75E611292C10983F00EECC4E /* ModuleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDetailView.swift; sourceTree = "<group>"; };
+		75E6112D2C12789000EECC4E /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		764915042C0DED1E006BE77F /* FireLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764915072C0DED1E006BE77F /* FireLearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnApp.swift; sourceTree = "<group>"; };
 		7649150B2C0DED1E006BE77F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
 				75126FEA2C1069F900ADC716 /* Module.swift */,
+				75E6112D2C12789000EECC4E /* CourseModel.swift */,
 				75E611272C10906800EECC4E /* ModuleListView.swift */,
 				75E611292C10983F00EECC4E /* ModuleDetailView.swift */,
 				61FBC9DC2C0F56F8005AC963 /* IconView.swift */,
@@ -275,6 +278,7 @@
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				75E6112A2C10983F00EECC4E /* ModuleDetailView.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
+				75E6112E2C12789000EECC4E /* CourseModel.swift in Sources */,
 				75126FEB2C1069F900ADC716 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
