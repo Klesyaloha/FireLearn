@@ -92,7 +92,7 @@ struct ModuleDetailView: View {
                 
             }
         }
-
+        
         
         
         

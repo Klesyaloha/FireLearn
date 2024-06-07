@@ -13,10 +13,11 @@ struct ModuleListView: View {
     var modules: [Module] = ModuleList.listOfModules
     
     var body: some View {
-
-            NavigationStack{
-                List(modules, id: \.id) { module in
-                    
+        
+        NavigationStack{
+            List(modules, id: \.id) { module in
+                NavigationLink(destination: ModuleDetailView(module: module) , label: 
+                                {
                     VStack(alignment: .leading, spacing: 20) {
                         Image(module.imageName)
                             .resizable()
@@ -36,16 +37,22 @@ struct ModuleListView: View {
                             
                         }
                     }
-                    
-                }
-                .listStyle(PlainListStyle())
-             .navigationTitle("Cours")
-             }
-             
-             
+                })
+                
+                
+                
+                
+                
+                
+            }
+            .listStyle(PlainListStyle())
+            .navigationTitle("Cours")
         }
         
+        
     }
+    
+}
 
 
 #Preview {
