@@ -107,11 +107,10 @@
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
 				75126FEA2C1069F900ADC716 /* Module.swift */,
 				75E6112D2C12789000EECC4E /* CourseModel.swift */,
+				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				75E611272C10906800EECC4E /* ModuleListView.swift */,
 				75E611292C10983F00EECC4E /* ModuleDetailView.swift */,
-				61FBC9DC2C0F56F8005AC963 /* IconView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
-				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
