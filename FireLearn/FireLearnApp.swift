@@ -25,8 +25,8 @@ struct FireLearnApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ModuleListView()
-           //TamagoDragonView()
+            //ModuleListView()
+           TamagoDragonView()
         }
         .modelContainer(sharedModelContainer)
     }
