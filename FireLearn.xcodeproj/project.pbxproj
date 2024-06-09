@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */; };
+		61FBC9E12C139B34005AC963 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FBC9E02C139B34005AC963 /* SplashView.swift */; };
 		764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915072C0DED1E006BE77F /* FireLearnApp.swift */; };
 		7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915092C0DED1E006BE77F /* ContentView.swift */; };
 		7649150C2C0DED1E006BE77F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7649150B2C0DED1E006BE77F /* Item.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagoDragonView.swift; sourceTree = "<group>"; };
+		61FBC9E02C139B34005AC963 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		764915042C0DED1E006BE77F /* FireLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764915072C0DED1E006BE77F /* FireLearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnApp.swift; sourceTree = "<group>"; };
 		764915092C0DED1E006BE77F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
 				764915092C0DED1E006BE77F /* ContentView.swift */,
+				61FBC9E02C139B34005AC963 /* SplashView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
 				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			files = (
 				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
+				61FBC9E12C139B34005AC963 /* SplashView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
 			);
