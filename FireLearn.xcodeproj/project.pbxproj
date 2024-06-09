@@ -18,6 +18,8 @@
 		764915272C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */; };
 		F38A5B782C11FE330057480D /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B772C11FE330057480D /* PlayView.swift */; };
 		F38A5B7A2C1215480057480D /* SkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B792C1215480057480D /* SkinView.swift */; };
+		F38A5B882C15AAC70057480D /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B872C15AAC70057480D /* StartView.swift */; };
+		F38A5B8A2C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */; };
 		F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0BED02C11BC29000B1FF2 /* EatView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,9 @@
 		764915262C0DED1F006BE77F /* FireLearnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLearnUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F38A5B772C11FE330057480D /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		F38A5B792C1215480057480D /* SkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinView.swift; sourceTree = "<group>"; };
+		F38A5B872C15AAC70057480D /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WonderfulFontyCure-4nnoD.ttf"; sourceTree = "<group>"; };
+		F38A5B8B2C15AAF90057480D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F3B0BED02C11BC29000B1FF2 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +109,11 @@
 		764915062C0DED1E006BE77F /* FireLearn */ = {
 			isa = PBXGroup;
 			children = (
+				F38A5B8B2C15AAF90057480D /* Info.plist */,
+				F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */,
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
 				764915092C0DED1E006BE77F /* ContentView.swift */,
+				F38A5B872C15AAC70057480D /* StartView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
 				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				F38A5B772C11FE330057480D /* PlayView.swift */,
@@ -248,6 +256,7 @@
 			files = (
 				764915112C0DED1F006BE77F /* Preview Assets.xcassets in Resources */,
 				7649150E2C0DED1F006BE77F /* Assets.xcassets in Resources */,
+				F38A5B8A2C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +284,7 @@
 				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
 				F38A5B7A2C1215480057480D /* SkinView.swift in Sources */,
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
+				F38A5B882C15AAC70057480D /* StartView.swift in Sources */,
 				F38A5B782C11FE330057480D /* PlayView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
@@ -445,6 +455,7 @@
 				DEVELOPMENT_TEAM = UGYM622S92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FireLearn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +485,7 @@
 				DEVELOPMENT_TEAM = UGYM622S92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FireLearn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
