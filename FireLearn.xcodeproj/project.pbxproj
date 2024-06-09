@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */; };
+		61FBC9E32C160BD2005AC963 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FBC9E22C160BD2005AC963 /* SettingsView.swift */; };
 		75126FEB2C1069F900ADC716 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75126FEA2C1069F900ADC716 /* Module.swift */; };
 		75E611282C10906800EECC4E /* ModuleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E611272C10906800EECC4E /* ModuleListView.swift */; };
 		75E6112A2C10983F00EECC4E /* ModuleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E611292C10983F00EECC4E /* ModuleDetailView.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagoDragonView.swift; sourceTree = "<group>"; };
+		61FBC9E22C160BD2005AC963 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		75126FEA2C1069F900ADC716 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		75E611272C10906800EECC4E /* ModuleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleListView.swift; sourceTree = "<group>"; };
 		75E611292C10983F00EECC4E /* ModuleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDetailView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		764914FB2C0DED1E006BE77F = {
 			isa = PBXGroup;
 			children = (
+				61FBC9E22C160BD2005AC963 /* SettingsView.swift */,
 				764915062C0DED1E006BE77F /* FireLearn */,
 				764915192C0DED1F006BE77F /* FireLearnTests */,
 				764915232C0DED1F006BE77F /* FireLearnUITests */,
@@ -118,11 +121,9 @@
 				F38A5B8B2C15AAF90057480D /* Info.plist */,
 				F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */,
 				764915072C0DED1E006BE77F /* FireLearnApp.swift */,
-				764915092C0DED1E006BE77F /* ContentView.swift */,
 				75126FEA2C1069F900ADC716 /* Module.swift */,
 				75E611272C10906800EECC4E /* ModuleListView.swift */,
 				75E611292C10983F00EECC4E /* ModuleDetailView.swift */,
-				61FBC9DC2C0F56F8005AC963 /* IconView.swift */,
 				7649150B2C0DED1E006BE77F /* Item.swift */,
 				61FBC9DE2C0F6B59005AC963 /* TamagoDragonView.swift */,
 				F38A5B772C11FE330057480D /* PlayView.swift */,
@@ -292,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7649150A2C0DED1E006BE77F /* ContentView.swift in Sources */,
 				F38A5B7A2C1215480057480D /* SkinView.swift in Sources */,
 				75E611282C10906800EECC4E /* ModuleListView.swift in Sources */,
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
@@ -302,6 +302,7 @@
 				75E6112A2C10983F00EECC4E /* ModuleDetailView.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
 				F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */,
+				61FBC9E32C160BD2005AC963 /* SettingsView.swift in Sources */,
 				F38A5B8D2C15DDA20057480D /* SplashView.swift in Sources */,
 				75126FEB2C1069F900ADC716 /* Module.swift in Sources */,
 			);

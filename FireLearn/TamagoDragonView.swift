@@ -58,7 +58,7 @@ struct TamagoDragonView: View {
                 
                 VStack {
                     HStack{
-                        NavigationLink(destination: Text("Paramètres")) {
+                        NavigationLink(destination: SettingsView()) {
                             Image("settings")
                                 .resizable()
                                 .frame(width: 35, height: 35)
@@ -74,7 +74,7 @@ struct TamagoDragonView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: Text("Cours")) {
+                        NavigationLink(destination: ModuleListView()) {
                             Image("grimoire")
                                 .resizable()
                                 .frame(width: 35, height: 35)

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "swiftData_logo.png",
+      "filename" : "icon_tamago.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icon_tamago 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icon_tamago 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

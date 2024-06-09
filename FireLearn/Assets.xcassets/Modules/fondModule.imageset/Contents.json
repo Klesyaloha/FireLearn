@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "swiftData_logo.png",
+      "filename" : "fondModules.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "fondModules 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "fondModules 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
