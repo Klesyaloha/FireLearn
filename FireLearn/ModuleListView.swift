@@ -18,7 +18,7 @@ struct ModuleListView: View {
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
-                    // l'image de fond ignore les zones de sécurité
+                    // l'image de bg ignore les zones de sécurité
                 
                 VStack {
                     HStack {
@@ -53,8 +53,8 @@ struct ModuleListView: View {
                         TextField("Search", text: .constant(""))
                             .padding()
                             .background(
-                                LinearGradient(colors: [Color.yellow, Color.red], startPoint: .leading, endPoint: .trailing)
-                                .opacity(0.50))
+                                LinearGradient(colors: [Color.yellow, Color.orange], startPoint: .leading, endPoint: .trailing)
+                                    .opacity(0.8))
                             .cornerRadius(25)
                             .padding([.leading, .trailing], 20)
                     }
@@ -82,7 +82,8 @@ struct ModuleListView: View {
                                         .foregroundColor(.black)
                                 }
                                 .padding()
-                                .background(Color.orange.opacity(0.19))
+                                .background(
+                                    Color(red: 1.0, green: 0.941, blue: 0.808)) // Couleur #FFF0CE
                                 .cornerRadius(15)
                                 .shadow(radius: 5)
                                 .padding([.leading, .trailing], 10)
