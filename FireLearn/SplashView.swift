@@ -12,10 +12,10 @@ struct AnimatedImageView: View {
     @Binding var animationFinished: Bool
     // binding pour mettre à jour l'état quand l'animation se termine
     private let frameCount = 8
-    private let frameRate = 0.8
+    private let frameRate = 0.7
 
-    private let imageNames = (1...8).map { "dragon_fire_frame_\($0)" }
-    
+    private let imageNames = (1...8).map { index in "dragon_fire_frame_\(index)" }
+
     var body: some View {
         Image(imageNames[currentFrame])
             .resizable()
@@ -35,12 +35,12 @@ struct AnimatedImageView: View {
 
 struct SplashView: View {
     @State private var animationFinished = false
-    
+
     var body: some View {
         VStack {
             if animationFinished {
-                // Afficher TDV lorsque l'animation est terminée
-                TamagoDragonView()
+                // Afficher StartView lorsque l'animation est terminée
+                StartView()
             } else {
                 AnimatedImageView(animationFinished: $animationFinished)
                     .frame(width: 900, height: 900)
