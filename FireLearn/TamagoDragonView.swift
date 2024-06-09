@@ -49,7 +49,7 @@ struct TamagoDragonView: View {
     
     var body: some View {
             let multiplier = width / 100
-        NavigationView{
+        NavigationStack{
             ZStack {
                 Image(backgroundImageName)
                     .resizable()

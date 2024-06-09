@@ -61,7 +61,7 @@ func updatedDragonInfo() {
     
     var body: some View {
             let multiplier = width / 100
-        NavigationView{
+        NavigationStack{
             ZStack {
                 Image("eatFond")
                     .resizable()
