@@ -1,19 +1,17 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
-      "filename" : "swiftUI_logo.png",
-=======
-      "filename" : "swiftuitest.jpeg",
->>>>>>> Klesya
+      "filename" : "quizFond.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "quizFond 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "quizFond 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

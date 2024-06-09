@@ -74,7 +74,11 @@ struct TamagoDragonView: View {
                         
                         Spacer()
                         
+<<<<<<< HEAD
                         NavigationLink(destination: ModuleListView()) {
+=======
+                        NavigationLink(destination: Text("Cours")) {
+>>>>>>> Klesya
                             Image("grimoire")
                                 .resizable()
                                 .frame(width: 35, height: 35)

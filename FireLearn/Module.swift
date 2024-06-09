@@ -20,7 +20,11 @@ struct ModuleList {
     
     static let listOfModules = [
         Module(imageName: "swift.png", title: "Swift", description: "Track your learning journey in Swift"),
+<<<<<<< HEAD
         Module(imageName: "swiftui.png", title: "SwiftUI", description: "Track your learning journey in SwiftUI"),
+=======
+        Module(imageName: "swiftui.png", title: "Swift", description: "Track your learning journey in SwiftUI"),
+>>>>>>> Klesya
         Module(imageName: "xcode.png", title: "Xcode", description: "Track your learning journey in Xcode"),
         Module(imageName: "github.png", title: "GitHub", description: "Track your learning journey in GitHub"),
         Module(imageName: "poo.png", title: "Programmation orienté object", description: "Track your learning journey in POO"),

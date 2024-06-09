@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
       "filename" : "swift_logo.png",
+=======
+      "filename" : "swift.jpeg",
+>>>>>>> Klesya
       "idiom" : "universal",
       "scale" : "1x"
     },
