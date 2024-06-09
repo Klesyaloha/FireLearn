@@ -61,7 +61,7 @@ func updatedDragonInfo() {
             let multiplier = width / 100
         NavigationView{
             ZStack {
-                Image("playFond")
+                Image("playfond")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
