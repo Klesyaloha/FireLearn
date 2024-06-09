@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "filename" : "xcode_logo.png",
-=======
-      "filename" : "Unknown.jpeg",
->>>>>>> Klesya
       "idiom" : "universal",
       "scale" : "1x"
     },

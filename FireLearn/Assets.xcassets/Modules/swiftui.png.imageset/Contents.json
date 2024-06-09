@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "filename" : "swiftUI_logo.png",
-=======
-      "filename" : "swiftuitest.jpeg",
->>>>>>> Klesya
       "idiom" : "universal",
       "scale" : "1x"
     },
