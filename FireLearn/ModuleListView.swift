@@ -39,7 +39,8 @@ struct ModuleListView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: TamagoDragonView()) {
+                        NavigationLink(destination: TamagoDragonView()
+                            .navigationBarBackButtonHidden()) {
                             Image("icon_tamago")
                                 .resizable()
                                 .frame(width: 35, height: 35)

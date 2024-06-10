@@ -74,7 +74,8 @@ struct TamagoDragonView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: ModuleListView()) {
+                        NavigationLink(destination: ModuleListView()
+                            .navigationBarBackButtonHidden()) {
                             Image("grimoire")
                                 .resizable()
                                 .frame(width: 35, height: 35)
