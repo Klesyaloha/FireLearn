@@ -8,6 +8,24 @@
 import SwiftUI
 import SwiftData
 
+class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
+    var App: FireLearnApp?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        
+        return true
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        if let deeplink = response.notification.request.content.userInfo["link"] as? String {
+            print("👍 received deep link \(deeplink)")
+        }
+    }
+}
+
 @main
 struct FireLearnApp: App {
     var sharedModelContainer: ModelContainer = {
@@ -25,8 +43,7 @@ struct FireLearnApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //ModuleListView()
-           TamagoDragonView()
+            SplashView()
         }
         .modelContainer(sharedModelContainer)
     }
