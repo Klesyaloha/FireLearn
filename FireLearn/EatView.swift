@@ -258,7 +258,7 @@ func updatedDragonInfo() {
     
     func checkCollisionPiggy() {
         let dx = mouthPosition.x - piggyPosition.x
-        let dy = mouthPosition.y - chickenPosition.y
+        let dy = mouthPosition.y - piggyPosition.y
         
         if abs(dx) <= 70 && abs(dy) <= 70 {
             if progress < 100 {
