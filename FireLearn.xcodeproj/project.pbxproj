@@ -130,8 +130,8 @@
 				F38A5B792C1215480057480D /* SkinView.swift */,
 				F38A5B872C15AAC70057480D /* StartView.swift */,
 				F38A5B8C2C15DDA20057480D /* SplashView.swift */,
-				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				F38A5B8E2C1632EF0057480D /* QuizView.swift */,
+				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
 			path = FireLearn;
