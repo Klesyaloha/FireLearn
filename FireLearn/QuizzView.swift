@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuizView: View {
+struct QuizzView: View {
     var body: some View {
         ZStack {
             Image("quizFond")
@@ -77,5 +77,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView()
+    QuizzView()
 }

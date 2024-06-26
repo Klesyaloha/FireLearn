@@ -23,7 +23,7 @@
 		F38A5B882C15AAC70057480D /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B872C15AAC70057480D /* StartView.swift */; };
 		F38A5B8A2C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */; };
 		F38A5B8D2C15DDA20057480D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B8C2C15DDA20057480D /* SplashView.swift */; };
-		F38A5B8F2C1632EF0057480D /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B8E2C1632EF0057480D /* QuizView.swift */; };
+		F38A5B8F2C1632EF0057480D /* QuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A5B8E2C1632EF0057480D /* QuizzView.swift */; };
 		F3B0BED12C11BC29000B1FF2 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0BED02C11BC29000B1FF2 /* EatView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		F38A5B892C15AADF0057480D /* WonderfulFontyCure-4nnoD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WonderfulFontyCure-4nnoD.ttf"; sourceTree = "<group>"; };
 		F38A5B8B2C15AAF90057480D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F38A5B8C2C15DDA20057480D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		F38A5B8E2C1632EF0057480D /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		F38A5B8E2C1632EF0057480D /* QuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzView.swift; sourceTree = "<group>"; };
 		F3B0BED02C11BC29000B1FF2 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,7 @@
 				F38A5B792C1215480057480D /* SkinView.swift */,
 				F38A5B872C15AAC70057480D /* StartView.swift */,
 				F38A5B8C2C15DDA20057480D /* SplashView.swift */,
-				F38A5B8E2C1632EF0057480D /* QuizView.swift */,
+				F38A5B8E2C1632EF0057480D /* QuizzView.swift */,
 				7649150D2C0DED1F006BE77F /* Assets.xcassets */,
 				7649150F2C0DED1F006BE77F /* Preview Content */,
 			);
@@ -298,7 +298,7 @@
 				61FBC9DF2C0F6B59005AC963 /* TamagoDragonView.swift in Sources */,
 				F38A5B882C15AAC70057480D /* StartView.swift in Sources */,
 				F38A5B782C11FE330057480D /* PlayView.swift in Sources */,
-				F38A5B8F2C1632EF0057480D /* QuizView.swift in Sources */,
+				F38A5B8F2C1632EF0057480D /* QuizzView.swift in Sources */,
 				7649150C2C0DED1E006BE77F /* Item.swift in Sources */,
 				75E6112A2C10983F00EECC4E /* ModuleDetailView.swift in Sources */,
 				764915082C0DED1E006BE77F /* FireLearnApp.swift in Sources */,
