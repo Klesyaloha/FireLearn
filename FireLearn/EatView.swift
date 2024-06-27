@@ -47,17 +47,9 @@ func updatedDragonInfo() {
         levelName = dragonLevelName[3]
     }
 }
-@State private var numberOfChicken = 2
-@State private var numberOfPiggy = 2
-@State private var numberOfBatata = 2
-@State private var isChickenVisible = false
-@State private var isPiggyVisible = false
-@State private var isBatataVisible = false
-@State private var chickenPosition = CGPoint(x: 200, y: 670)
-@State private var batataPosition = CGPoint(x: 200, y: 670)
-@State private var piggyPosition = CGPoint(x: 200, y: 670)
-// Position de la bouche du dragon
-    let mouthPosition = CGPoint(x: 215, y: 390)
+@StateObject private var chicken = Food(name: "chicken", quantity: 2, isVisible: false, progress: 0)
+@StateObject private var piggy = Food(name: "piggy", quantity: 2, isVisible: false, progress: 0)
+@StateObject private var batata = Food(name: "batata", quantity: 2, isVisible: false, progress: 0)
     
     var body: some View {
             let multiplier = width / 100
@@ -119,13 +111,13 @@ func updatedDragonInfo() {
                     ZStack{
                         HStack {
                             Button(action: {
-                                if !isPiggyVisible && !isBatataVisible && numberOfChicken > 0 {
-                                    isChickenVisible.toggle()
-                                    chickenPosition = CGPoint(x: 200, y: 670)
+                                if !piggy.isVisible && !batata.isVisible && chicken.quantity > 0 {
+                                    chicken.isVisible.toggle()
+                                    chicken.position = CGPoint(x: 200, y: 670)
                                 }
                                 
                             }, label: {
-                                Image("chicken")
+                                Image(chicken.name)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(.all, 10.0)
@@ -135,12 +127,12 @@ func updatedDragonInfo() {
                             })
                             
                             Button(action: {
-                                if !isChickenVisible && !isBatataVisible && numberOfPiggy > 0 {
-                                    isPiggyVisible.toggle()
-                                    piggyPosition = CGPoint(x: 200, y: 670)
+                                if !chicken.isVisible && !batata.isVisible && piggy.quantity > 0 {
+                                    piggy.isVisible.toggle()
+                                    piggy.position = CGPoint(x: 200, y: 670)
                                 }
                             }, label: {
-                                Image("piggy")
+                                Image(piggy.name)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(.all, 10.0)
@@ -150,12 +142,12 @@ func updatedDragonInfo() {
                             })
                             
                             Button(action: {
-                                if !isChickenVisible && !isPiggyVisible && numberOfBatata > 0 {
-                                    isBatataVisible.toggle()
-                                    batataPosition = CGPoint(x: 200, y: 670)
+                                if !chicken.isVisible && !piggy.isVisible && batata.quantity > 0 {
+                                    batata.isVisible.toggle()
+                                    batata.position = CGPoint(x: 200, y: 670)
                                 }
                             }, label: {
-                                Image("batata")
+                                Image(batata.name)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding(.all, 10.0)
@@ -166,17 +158,17 @@ func updatedDragonInfo() {
                         }
                         .padding(.bottom, 70.0)
                         
-                        Image(systemName: "\(numberOfChicken).square.fill")
+                        Image(systemName: "\(chicken.quantity).square.fill")
                             .padding(.trailing, 130.0)
                             .padding(.bottom, 115.0)
                             .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
                         
-                        Image(systemName: "\(numberOfPiggy).square.fill")
+                        Image(systemName: "\(piggy.quantity).square.fill")
                             .padding(.leading, 66.0)
                             .padding(.bottom, 115.0)
                             .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
                         
-                        Image(systemName: "\(numberOfBatata).square.fill")
+                        Image(systemName: "\(batata.quantity).square.fill")
                             .padding(.leading, 262.0)
                             .padding(.bottom, 115.0)
                             .foregroundColor(Color(red: 0.999, green: 0.359, blue: 0.181))
@@ -188,101 +180,66 @@ func updatedDragonInfo() {
                         updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                     }
                 
-                if isBatataVisible {
-                    Image("batata")
+                if batata.isVisible {
+                    Image(batata.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(batataPosition)
+                        .position(batata.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    batataPosition = value.location
+                                    batata.position = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionBatata()
+                                    batata.progress = progress
+                                    batata.checkCollision()
+                                    progress = batata.progress
+                                    updatedDragonInfo()
                                 }
                         )
                 }
                 
-                if isChickenVisible {
-                    Image("chicken")
+                if chicken.isVisible {
+                    Image(chicken.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(chickenPosition)
+                        .position(chicken.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    chickenPosition = value.location
+                                    chicken.position = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionChicken()
+                                    chicken.progress = progress
+                                    chicken.checkCollision()
+                                    progress = chicken.progress
+                                    updatedDragonInfo()
                                 }
                         )
                 }
                 
-                if isPiggyVisible {
+                if piggy.isVisible {
                     Image("piggy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(piggyPosition)
+                        .position(piggy.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    piggyPosition = value.location
+                                    piggy.position = value.location
                                 }
                                 .onEnded { _ in
-                                    checkCollisionPiggy()
+                                    piggy.progress = progress
+                                    piggy.checkCollision()
+                                    progress = piggy.progress
+                                    updatedDragonInfo()
                                 }
                         )
                 }
             }
-        }
-    }
-    func checkCollisionChicken() {
-        let dx = mouthPosition.x - chickenPosition.x
-        let dy = mouthPosition.y - chickenPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if progress < 100 {
-                progress += 4
-                numberOfChicken -= 1
-                updatedDragonInfo()
-            }
-            
-            isChickenVisible = false
-        }
-    }
-    
-    func checkCollisionPiggy() {
-        let dx = mouthPosition.x - piggyPosition.x
-        let dy = mouthPosition.y - piggyPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if progress < 100 {
-                progress += 4
-                numberOfPiggy -= 1
-                updatedDragonInfo()
-            }
-            
-            isPiggyVisible = false
-        }
-    }
-    
-    func checkCollisionBatata() {
-        let dx = mouthPosition.x - batataPosition.x
-        let dy = mouthPosition.y - batataPosition.y
-        
-        if abs(dx) <= 70 && abs(dy) <= 70 {
-            if progress < 100 {
-                progress += 4
-                numberOfBatata -= 1
-                updatedDragonInfo()
-            }
-            
-            isBatataVisible = false
         }
     }
 }
