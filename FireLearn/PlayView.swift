@@ -47,15 +47,10 @@ func updatedDragonInfo() {
         levelName = dragonLevelName[3]
     }
 }
-    
-@State private var isPelucheVisible = false
-@State private var isCubesVisible = false
-@State private var isTowerVisible = false
-@State private var peluchePosition = CGPoint(x: 200, y: 670)
-@State private var cubesPosition = CGPoint(x: 200, y: 670)
-@State private var towerPosition = CGPoint(x: 200, y: 670)
-// Position de la bouche du dragon
-    let mouthPosition = CGPoint(x: 215, y: 390)
+
+@StateObject var peluche = Article(name: "peluche", isVisible: false)
+@StateObject var cubes = Article(name: "cubes", isVisible: false)
+@StateObject var tower = Article(name: "tower", isVisible: false)
     
     var body: some View {
             let multiplier = width / 100
@@ -116,13 +111,13 @@ func updatedDragonInfo() {
                     
                     HStack {
                         Button(action: {
-                            if !isCubesVisible && !isTowerVisible {
-                                isPelucheVisible.toggle()
-                                peluchePosition = CGPoint(x: 200, y: 670)
+                            if !cubes.isVisible && !tower.isVisible {
+                                peluche.isVisible.toggle()
+                                peluche.position = CGPoint(x: 200, y: 670)
                             }
                             
                         }, label: {
-                            Image("peluche")
+                            Image(peluche.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 13.0)
@@ -132,12 +127,12 @@ func updatedDragonInfo() {
                         })
                         
                         Button(action: {
-                            if !isPelucheVisible && !isTowerVisible {
-                                isCubesVisible.toggle()
-                                cubesPosition = CGPoint(x: 200, y: 670)
+                            if !peluche.isVisible && !tower.isVisible {
+                                cubes.isVisible.toggle()
+                                cubes.position = CGPoint(x: 200, y: 670)
                             }
                         }, label: {
-                            Image("cubes")
+                            Image(cubes.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 13.0)
@@ -147,12 +142,12 @@ func updatedDragonInfo() {
                         })
                         
                         Button(action: {
-                            if !isPelucheVisible && !isCubesVisible {
-                                isTowerVisible.toggle()
-                                towerPosition = CGPoint(x: 200, y: 670)
+                            if !peluche.isVisible && !cubes.isVisible {
+                                tower.isVisible.toggle()
+                                tower.position = CGPoint(x: 200, y: 670)
                             }
                         }, label: {
-                            Image("tower")
+                            Image(tower.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 15.0)
@@ -168,53 +163,44 @@ func updatedDragonInfo() {
                         updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                     }
                 
-                if isCubesVisible {
-                    Image("cubes")
+                if cubes.isVisible {
+                    Image(cubes.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(cubesPosition)
+                        .position(cubes.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    cubesPosition = value.location
-                                }
-                                .onEnded { _ in
-                                    
+                                    cubes.position = value.location
                                 }
                         )
                 }
                 
-                if isPelucheVisible {
-                    Image("peluche")
+                if peluche.isVisible {
+                    Image(peluche.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150.0, height: 150.0)
-                        .position(peluchePosition)
+                        .position(peluche.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    peluchePosition = value.location
-                                }
-                                .onEnded { _ in
-                                    
+                                    peluche.position = value.location
                                 }
                         )
                 }
                 
-                if isTowerVisible {
-                    Image("tower")
+                if tower.isVisible {
+                    Image(tower.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                        .position(towerPosition)
+                        .position(tower.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    towerPosition = value.location
-                                }
-                                .onEnded { _ in
-                                    
+                                    tower.position = value.location
                                 }
                         )
                 }

@@ -47,15 +47,10 @@ func updatedDragonInfo() {
         levelName = dragonLevelName[3]
     }
 }
-    
-@State private var isGlassesVisible = false
-@State private var isChapeauVisible = false
-@State private var isNoeudVisible = false
-@State private var glassesPosition = CGPoint(x: 196, y: 416)
-@State private var chapeauPosition = CGPoint(x: 200, y: 670)
-@State private var noeudPosition = CGPoint(x: 200, y: 670)
-// Position de la bouche du dragon
-    let mouthPosition = CGPoint(x: 215, y: 390)
+
+@StateObject var glasses = Article(name: "glasses", isVisible: false)
+@StateObject var chapeau = Article(name: "chapeau", isVisible: false)
+@StateObject var noeud = Article(name: "noeud", isVisible: false)
     
     var body: some View {
             let multiplier = width / 100
@@ -116,20 +111,20 @@ func updatedDragonInfo() {
                     
                     HStack {
                         Button(action: {
-                                isGlassesVisible.toggle()
+                            glasses.isVisible.toggle()
                             
                             if levelName == dragonLevelName[2] {
-                                glassesPosition = CGPoint(x: 217, y: 376)
+                                glasses.position = CGPoint(x: 217, y: 376)
                             } else if levelName == dragonLevelName[3] {
-                                glassesPosition = CGPoint(x: 198, y: 395)
+                                glasses.position = CGPoint(x: 198, y: 395)
                             } else {
-                                glassesPosition = CGPoint(x: 196, y: 416)
+                                glasses.position = CGPoint(x: 196, y: 416)
                             }
                             
                                 
                             
                         }, label: {
-                            Image("glasses")
+                            Image(glasses.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 11.0)
@@ -139,17 +134,17 @@ func updatedDragonInfo() {
                         })
                         
                         Button(action: {
-                                isChapeauVisible.toggle()
+                            chapeau.isVisible.toggle()
                             if levelName == dragonLevelName[2] {
-                                chapeauPosition = CGPoint(x: 207, y: 270)
+                                chapeau.position = CGPoint(x: 207, y: 270)
                             } else if levelName == dragonLevelName[3] {
-                                chapeauPosition = CGPoint(x: 199, y: 291)
+                                chapeau.position = CGPoint(x: 199, y: 291)
                             } else {
-                                chapeauPosition = CGPoint(x: 203, y: 282)
+                                chapeau.position = CGPoint(x: 203, y: 282)
                             }
                             
                         }, label: {
-                            Image("chapeau")
+                            Image(chapeau.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 16.0)
@@ -159,20 +154,20 @@ func updatedDragonInfo() {
                         })
                         
                         Button(action: {
-                                isNoeudVisible.toggle()
+                            noeud.isVisible.toggle()
                             if levelName == dragonLevelName[1] {
-                                noeudPosition = CGPoint(x: 194, y: 505)
+                                noeud.position = CGPoint(x: 194, y: 505)
                             } else if levelName == dragonLevelName[0] {
-                                noeudPosition = CGPoint(x: 194, y: 484)
+                                noeud.position = CGPoint(x: 194, y: 484)
                             } else if levelName == dragonLevelName[3] {
-                                noeudPosition = CGPoint(x: 197, y: 512)
+                                noeud.position = CGPoint(x: 197, y: 512)
                             } else {
-                                noeudPosition = CGPoint(x: 213, y: 472)
+                                noeud.position = CGPoint(x: 213, y: 472)
                             }
                             
                                 
                         }, label: {
-                            Image("noeud")
+                            Image(noeud.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.all, 19.0)
@@ -188,16 +183,16 @@ func updatedDragonInfo() {
                         updatedDragonInfo() // SUI pour pouvoir exécuter le code inclus lorsque la view apparait et maj les infos du dragon
                     }
                 
-                if isChapeauVisible {
+                if chapeau.isVisible {
                     Image("chapeau")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200.0, height: 200.0)
-                        .position(chapeauPosition)
+                        .position(chapeau.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    chapeauPosition = value.location
+                                    chapeau.position = value.location
                                 }
                                 .onEnded { _ in
                                     
@@ -205,16 +200,16 @@ func updatedDragonInfo() {
                         )
                 }
                 
-                if isGlassesVisible {
+                if glasses.isVisible {
                     Image("glasses")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 230.0, height: 230.0)
-                        .position(glassesPosition)
+                        .position(glasses.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    glassesPosition = value.location
+                                    glasses.position = value.location
                                 }
                                 .onEnded { _ in
                                     
@@ -222,19 +217,19 @@ func updatedDragonInfo() {
                         )
                 }
                 
-                if isNoeudVisible {
+                if noeud.isVisible {
                     Image("noeud")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120.0, height: 120.0)
-                        .position(noeudPosition)
+                        .position(noeud.position)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
-                                    noeudPosition = value.location
+                                    noeud.position = value.location
                                 }
                                 .onEnded { _ in
-                                    print(noeudPosition)
+                                    print(noeud.position)
                                 }
                         )
                 }
