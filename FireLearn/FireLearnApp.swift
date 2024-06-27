@@ -8,23 +8,31 @@
 import SwiftUI
 import SwiftData
 
-class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
+/**
+ Une classe pour gérer les délégués d'application et de notification.
+ */
+class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNotificationCenterDelegate {
+    
+    /// Une propriété optionnelle pour l'application FireLearn.
     var App: FireLearnApp?
     
+    /**
+     Méthode appelée après le lancement de l'application.
+     
+     - Parameters:
+       - application: L'instance de l'application.
+       - launchOptions: Les options de lancement de l'application.
+     - Returns: Un booléen indiquant si le lancement a réussi.
+     
+     Cette méthode configure le délégué de l'instance actuelle de `UNUserNotificationCenter`.
+     */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().delegate = self // Configure le délégué des notifications
         
-        return true
+        return true // Indique que le lancement de l'application a réussi
     }
 }
 
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        if let deeplink = response.notification.request.content.userInfo["link"] as? String {
-            print("👍 received deep link \(deeplink)")
-        }
-    }
-}
 
 @main
 struct FireLearnApp: App {

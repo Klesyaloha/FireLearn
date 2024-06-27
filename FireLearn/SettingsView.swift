@@ -13,31 +13,8 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             Image("startFond").resizable().ignoresSafeArea()
-            Button("Notification enabler") {
-                Task {
-                    await manager.request()
-                    await manager.getAuthStatus()
-                }
-            }
-            .buttonStyle(BlackButtonStyle(isEnabled: !manager.hasPermission))
-            .disabled(manager.hasPermission)
-            .task {
-                await manager.getAuthStatus()
-            }
+            Text("Settings")
         }
-    }
-}
-
-struct BlackButtonStyle: ButtonStyle {
-    var isEnabled: Bool
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(isEnabled ? Color.black : Color.gray)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }
 

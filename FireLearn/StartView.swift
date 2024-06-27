@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
+    
+    @StateObject var manager = NotificationManager()
     var body: some View {
         
         NavigationStack {
