@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ModuleListView: View {
-    
+    var progress : CGFloat
     var modules: [Module] = ModuleList.listOfModules
     
     var body: some View {
@@ -39,7 +39,7 @@ struct ModuleListView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: TamagoDragonView()
+                        NavigationLink(destination: TamagoDragonView(progress: progress)
                             .navigationBarBackButtonHidden()) {
                             Image("icon_tamago")
                                 .resizable()
@@ -100,6 +100,6 @@ struct ModuleListView: View {
 
 struct ModuleListView_Previews: PreviewProvider {
     static var previews: some View {
-        ModuleListView()
+        ModuleListView(progress: 50)
     }
 }

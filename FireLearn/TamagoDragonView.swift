@@ -10,7 +10,7 @@ import SwiftUI
 struct TamagoDragonView: View {
     var width: CGFloat = 300 //CGFloat type donnée pr float pr valeur liés taille ds contexte graphique
     var height: CGFloat = 60
-    @State private var progress: CGFloat = 50
+    @State var progress: CGFloat
     var color1 = Color.yellow
     var color2 = Color.red
     var color3 = Color.white
@@ -74,7 +74,7 @@ struct TamagoDragonView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: ModuleListView()
+                        NavigationLink(destination: ModuleListView(progress: progress)
                             .navigationBarBackButtonHidden()) {
                             Image("grimoire")
                                 .resizable()
@@ -159,5 +159,5 @@ struct TamagoDragonView: View {
     }
 
     #Preview {
-        TamagoDragonView()
+        TamagoDragonView(progress: 50)
     }

@@ -70,7 +70,7 @@ struct StartView: View {
                     }
                     
                     NavigationLink(destination: {
-                        TamagoDragonView()
+                        TamagoDragonView(progress: 50)
                             .navigationBarBackButtonHidden()
                     }, label: {
                         Text("Entrer")
