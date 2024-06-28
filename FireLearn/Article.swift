@@ -2,7 +2,7 @@
 //  Article.swift
 //  FireLearn
 //
-//  Created by Apprenant 160 on 27/06/2024.
+//  Created by Klesya Loha on 27/06/2024.
 //
 
 import Foundation

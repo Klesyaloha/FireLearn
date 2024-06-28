@@ -2,7 +2,7 @@
 //  Food.swift
 //  FireLearn
 //
-//  Created by Apprenant 160 on 27/06/2024.
+//  Created by Klesya Loha on 27/06/2024.
 //
 
 import Foundation
@@ -49,8 +49,8 @@ class Food : Article {
                 let increment : CGFloat = min(4, 100 - progress)
                 progress += increment
                 quantity -= 1
+                isVisible = false
             }
-            isVisible = false
         }
     }
 }
